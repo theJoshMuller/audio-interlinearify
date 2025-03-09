@@ -2,6 +2,8 @@
 
 A tool that uses Meta's MMS model to create interlinear audio bibles, in potentially 1,000+ different languages.
 
+The idea is explained in depth in [this blog post](https://joshmuller.ca/writings/2024/interlinear-audiobible)
+
 # Installation
 
 ## 1. Clone this repo 
@@ -33,14 +35,17 @@ On Arch Linux that's:
 sudo pacman -S ffmpeg sox
 ```
 
-But it will depend on your system.
+Your installation command will depend on your system.
 
 
 ## 3. Usage
 
-To make an interlinear audio bible, you'll need a text and audio file for each language you want to stitch together.
+To make an interlinear audio bible, you'll need a text (`txt`) and audio (`mp3`) file for each language, for each chapter you want to create an interlinear audio file for.
 
-example files are provided in `./sample_data`
+
+The text files will need to have each "segment" (verse, sentence, etc.) that you want separated by lines, and _each txt file will need to have the same number of lines._
+
+Example files are provided in `./sample_data`
 
 Here's the syntax for the command:
 
@@ -60,6 +65,5 @@ Language options can be found in `./data/mms_languages.json`
 # 4. Contributions Welcome
 
 This is just a fun side project. If you want to contribute, feel free!
-
 
 Thanks to [Trent Cowden](https://trentcowden.com/) for building out [TimeStampAudio CLI](https://github.com/kingdomstrategies/waha-ai-timestamper-cli), and thanks to Meta for releasing their [MMS](https://ai.meta.com/blog/multilingual-model-speech-recognition/) model.
